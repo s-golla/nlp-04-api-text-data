@@ -1,7 +1,6 @@
 # nlp-01-getting-started
 
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
-[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 
 > Professional Python project for Web Mining and Applied NLP.
 
@@ -53,7 +52,7 @@ You'll work with these files as you update authorship and experiment:
 
 ## First: Follow These Instructions
 
-Follow the [step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/) to complete:
+Follow the [step-by-step workflow guide](https://s-golla.github.io/pro-analytics-02/workflow-b-apply-example-project/) to complete:
 
 1. Phase 1. **Start & Run**
 2. Phase 2. **Change Authorship**
@@ -93,7 +92,7 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/nlp-04-api-text-data
+git clone https://github.com/s-golla/nlp-04-api-text-data
 cd nlp-04-api-text-data
 code .
 ```
