@@ -60,23 +60,35 @@ def run_transform(
     LOG.info("STAGE 03: TRANSFORM starting...")
     LOG.info("========================")
     LOG.info(
-        "Selecting fields: post_id, comment_id, commenter_name, commenter_email, comment_text"
+        "Selecting fields: user_id, name, username, email, city, company_name, website, full_address"
     )
     LOG.info(f"Transforming {len(json_data)} records into a structured DataFrame")
 
     records: list[dict[str, Any]] = []
 
     for record in json_data:
-        comment_text = record["body"]
+        address = record["address"]
+        company = record["company"]
+        full_address = ", ".join(
+            [
+                address["suite"],
+                address["street"],
+                address["city"],
+                address["zipcode"],
+            ]
+        )
+
         records.append(
             {
-                "post_id": record["postId"],
-                "comment_id": record["id"],
-                "commenter_name": record["name"],
-                "commenter_email": record["email"],
-                "comment_text": comment_text,
-                "comment_text_length": len(comment_text),
-                "comment_text_word_count": len(comment_text.split()),
+                "user_id": record["id"],
+                "name": record["name"],
+                "username": record["username"],
+                "email": record["email"],
+                "city": address["city"],
+                "company_name": company["name"],
+                "website": record["website"],
+                "full_address": full_address,
+                "name_length": len(record["name"]),
             }
         )
 

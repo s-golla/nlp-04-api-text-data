@@ -263,3 +263,89 @@ shape: (5, 7)
 2026-03-28 12:57:25 | INFO | CI | ========================
 2026-03-28 12:57:25 | INFO | CI | Pipeline executed successfully!
 2026-03-28 12:57:25 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | === RUN START ===
+2026-03-28 13:24:33 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-03-28 13:24:33 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-03-28 13:24:33 | INFO | CI | python=3.14.0
+2026-03-28 13:24:33 | INFO | CI | os=Windows 11
+2026-03-28 13:24:33 | INFO | CI | shell=powershell
+2026-03-28 13:24:33 | INFO | CI | cwd=.
+2026-03-28 13:24:33 | INFO | CI | github_actions=False
+2026-03-28 13:24:33 | INFO | CI | START PIPELINE
+2026-03-28 13:24:33 | INFO | CI | ROOT_PATH = .
+2026-03-28 13:24:33 | INFO | CI | DATA_PATH = data
+2026-03-28 13:24:33 | INFO | CI | RAW_PATH = data\raw
+2026-03-28 13:24:33 | INFO | CI | PROCESSED_PATH = data\processed
+2026-03-28 13:24:33 | INFO | CI | BEGIN EXTRACT stage
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/users
+2026-03-28 13:24:33 | INFO | CI | SINK PATH = data\raw\sgolla_users_raw.json
+2026-03-28 13:24:33 | INFO | CI | EXTRACT complete: 10 records written to C:\workspace\Repos\Web_Mining_and_Applied_NLP\nlp-04-api-text-data\data\raw\sgolla_users_raw.json
+2026-03-28 13:24:33 | INFO | CI | BEGIN VALIDATE stage
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-03-28 13:24:33 | INFO | CI | Top-level type: list
+2026-03-28 13:24:33 | INFO | CI | Keys in first record: ['id', 'name', 'username', 'email', 'address', 'phone', 'website', 'company']
+2026-03-28 13:24:33 | INFO | CI | Field types:
+2026-03-28 13:24:33 | INFO | CI | id: int
+2026-03-28 13:24:33 | INFO | CI | name: str
+2026-03-28 13:24:33 | INFO | CI | username: str
+2026-03-28 13:24:33 | INFO | CI | email: str
+2026-03-28 13:24:33 | INFO | CI | address: dict
+2026-03-28 13:24:33 | INFO | CI | phone: str
+2026-03-28 13:24:33 | INFO | CI | website: str
+2026-03-28 13:24:33 | INFO | CI | company: dict
+2026-03-28 13:24:33 | INFO | CI | Validation passed for 10 records.
+2026-03-28 13:24:33 | INFO | CI | Sink: validated JSON object
+2026-03-28 13:24:33 | INFO | CI | VALIDATE complete: 10 records passed validation
+2026-03-28 13:24:33 | INFO | CI | BEGIN TRANSFORM stage
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | Selecting fields: user_id, name, username, email, city, company_name, website, full_address
+2026-03-28 13:24:33 | INFO | CI | Transforming 10 records into a structured DataFrame
+2026-03-28 13:24:33 | INFO | CI | Transformation complete: 10 rows and 9 columns created
+2026-03-28 13:24:33 | INFO | CI | DataFrame preview:
+shape: (5, 9)
+┌─────────┬────────────┬───────────┬────────────┬───┬────────────┬────────────┬────────────┬───────────┐
+│ user_id ┆ name       ┆ username  ┆ email      ┆ … ┆ company_na ┆ website    ┆ full_addre ┆ name_leng │
+│ ---     ┆ ---        ┆ ---       ┆ ---        ┆   ┆ me         ┆ ---        ┆ ss         ┆ th        │
+│ i64     ┆ str        ┆ str       ┆ str        ┆   ┆ ---        ┆ str        ┆ ---        ┆ ---       │
+│         ┆            ┆           ┆            ┆   ┆ str        ┆            ┆ str        ┆ i64       │
+╞═════════╪════════════╪═══════════╪════════════╪═══╪════════════╪════════════╪════════════╪═══════════╡
+│ 1       ┆ Leanne     ┆ Bret      ┆ Sincere@ap ┆ … ┆ Romaguera- ┆ hildegard. ┆ Apt. 556,  ┆ 13        │
+│         ┆ Graham     ┆           ┆ ril.biz    ┆   ┆ Crona      ┆ org        ┆ Kulas      ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Light,     ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Gwenbor…   ┆           │
+│ 2       ┆ Ervin      ┆ Antonette ┆ Shanna@mel ┆ … ┆ Deckow-Cri ┆ anastasia. ┆ Suite 879, ┆ 12        │
+│         ┆ Howell     ┆           ┆ issa.tv    ┆   ┆ st         ┆ net        ┆ Victor     ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Plains,    ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Wiso…      ┆           │
+│ 3       ┆ Clementine ┆ Samantha  ┆ Nathan@yes ┆ … ┆ Romaguera- ┆ ramiro.inf ┆ Suite 847, ┆ 16        │
+│         ┆ Bauch      ┆           ┆ enia.net   ┆   ┆ Jacobson   ┆ o          ┆ Douglas    ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Extension, ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ …          ┆           │
+│ 4       ┆ Patricia   ┆ Karianne  ┆ Julianne.O ┆ … ┆ Robel-Cork ┆ kale.biz   ┆ Apt. 692,  ┆ 16        │
+│         ┆ Lebsack    ┆           ┆ Conner@kor ┆   ┆ ery        ┆            ┆ Hoeger     ┆           │
+│         ┆            ┆           ┆ y.org      ┆   ┆            ┆            ┆ Mall,      ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ South E…   ┆           │
+│ 5       ┆ Chelsey    ┆ Kamren    ┆ Lucio_Hett ┆ … ┆ Keebler    ┆ demarco.in ┆ Suite 351, ┆ 16        │
+│         ┆ Dietrich   ┆           ┆ inger@anni ┆   ┆ LLC        ┆ fo         ┆ Skiles     ┆           │
+│         ┆            ┆           ┆ e.ca       ┆   ┆            ┆            ┆ Walks,     ┆           │
+│         ┆            ┆           ┆            ┆   ┆            ┆            ┆ Rosco…     ┆           │
+└─────────┴────────────┴───────────┴────────────┴───┴────────────┴────────────┴────────────┴───────────┘
+2026-03-28 13:24:33 | INFO | CI | Sink: Polars DataFrame created
+2026-03-28 13:24:33 | INFO | CI | TRANSFORM complete: DataFrame has 10 rows and 9 columns
+2026-03-28 13:24:33 | INFO | CI | BEGIN LOAD stage
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | STAGE 04: LOAD starting...
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | SINK PATH = data\processed\sgolla_users_processed.csv
+2026-03-28 13:24:33 | INFO | CI | LOAD complete: file written to C:\workspace\Repos\Web_Mining_and_Applied_NLP\nlp-04-api-text-data\data\processed\sgolla_users_processed.csv
+2026-03-28 13:24:33 | INFO | CI | ========================
+2026-03-28 13:24:33 | INFO | CI | Pipeline executed successfully!
+2026-03-28 13:24:33 | INFO | CI | ========================
